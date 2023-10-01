@@ -6,8 +6,8 @@ func _ready():
 
 func get_random_egg():
 	var random_float = randf()
-	if random_float < 0.5:
-		$Sprite2D.dino_resource = load("res://resources/dino1.tres")
+	if random_float < 1.1:
+		$Sprite2D.dino_resource = load("res://resources/dino2.tres")
 	else:
 		$Sprite2D.dino_resource = load("res://resources/dino2.tres")
 	Globals.curr_dino_state = Globals.dino_states.EGG

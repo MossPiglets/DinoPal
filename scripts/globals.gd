@@ -50,6 +50,17 @@ var has_grown = false
 signal stats_changed
 signal state_changed
 
+func reset_stats():
+	hunger = 0
+	clean_adult = 0
+	clean_egg = 0
+	thrist = 0
+	fun = 0
+	energy = 100
+	health = 100
+	warmth = 0
+	affection = 0
+
 func _process(_delta):
 	if get_stat_sum() == 400 and not has_grown:
 		grow_hachling()

@@ -5,7 +5,8 @@ extends Sprite2D
 func load_dino():
 	Globals.curr_egg_hatch_time = Globals.egg_hatch_time
 	Globals.curr_dino = dino_resource.dino_type
-
+	texture = load("res://assets/Egg.png")
+	Globals.reset_stats()
 func hatch():
 	$AnimationPlayer.play("egg_hatching")
 
