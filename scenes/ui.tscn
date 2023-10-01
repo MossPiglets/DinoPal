@@ -1,0 +1,660 @@
+[gd_scene load_steps=16 format=3 uid="uid://dcujfskwlegxt"]
+
+[ext_resource type="Script" path="res://scripts/ui.gd" id="1_4qarf"]
+[ext_resource type="Texture2D" uid="uid://bok23ae1iyrh3" path="res://assets/meat.png" id="2_ofd3o"]
+[ext_resource type="Texture2D" uid="uid://biioo2v1kor6r" path="res://assets/Bowl.png" id="3_pmleq"]
+[ext_resource type="Texture2D" uid="uid://vu4w7va6u4gp" path="res://assets/plant.png" id="3_wkmp3"]
+[ext_resource type="Texture2D" uid="uid://d4hld0abwh3cd" path="res://assets/red-basket.png" id="4_2tydl"]
+[ext_resource type="Texture2D" uid="uid://iec2ktl61slh" path="res://assets/Sponge.png" id="4_q2i1l"]
+[ext_resource type="Texture2D" uid="uid://bbwxgi1ktfvue" path="res://assets/water.png" id="4_rcte8"]
+[ext_resource type="Texture2D" uid="uid://d2ruvwyh52ea3" path="res://assets/Ball.png" id="5_32kd6"]
+[ext_resource type="Texture2D" uid="uid://b0bxogi2mjsah" path="res://assets/droplet.png" id="5_h6qqy"]
+[ext_resource type="Texture2D" uid="uid://bm0k5ptwdllr0" path="res://assets/Scarf.png" id="6_njk5c"]
+[ext_resource type="Texture2D" uid="uid://bpalr44hn2k27" path="res://assets/TeddyBear.png" id="7_mhstp"]
+[ext_resource type="Texture2D" uid="uid://cdsdkpycnakvk" path="res://assets/ScarfBig.png" id="7_ny7i0"]
+[ext_resource type="Texture2D" uid="uid://c4yysnevl2gds" path="res://assets/SpongeBig.png" id="8_dy60n"]
+[ext_resource type="Texture2D" uid="uid://dwagkdch7ay3h" path="res://assets/TeddyBig.png" id="8_p17ct"]
+[ext_resource type="Texture2D" uid="uid://ck6rry2pio7fo" path="res://assets/heart.png" id="9_t8aol"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_4qarf")
+
+[node name="StatsAdult" type="MarginContainer" parent="."]
+layout_mode = 2
+offset_right = 400.0
+offset_bottom = 189.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsAdult"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="Stats" type="GridContainer" parent="StatsAdult/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Hunger" type="ProgressBar" parent="StatsAdult/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="HungerLabel" type="Label" parent="StatsAdult/VBoxContainer/Stats/Hunger"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StatsAdult/VBoxContainer/Stats/Hunger"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_pmleq")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Clean" type="ProgressBar" parent="StatsAdult/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="CleanLabel" type="Label" parent="StatsAdult/VBoxContainer/Stats/Clean"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StatsAdult/VBoxContainer/Stats/Clean"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q2i1l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Energy" type="ProgressBar" parent="StatsAdult/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="EnergyLabel" type="Label" parent="StatsAdult/VBoxContainer/Stats/Energy"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StatsAdult/VBoxContainer/Stats/Energy"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2tydl")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Thirst" type="ProgressBar" parent="StatsAdult/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="ThristLabel" type="Label" parent="StatsAdult/VBoxContainer/Stats/Thirst"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StatsAdult/VBoxContainer/Stats/Thirst"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_h6qqy")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Fun" type="ProgressBar" parent="StatsAdult/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="FunLabel" type="Label" parent="StatsAdult/VBoxContainer/Stats/Fun"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StatsAdult/VBoxContainer/Stats/Fun"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_32kd6")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="Health" type="ProgressBar" parent="StatsAdult/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="HealthLabel" type="Label" parent="StatsAdult/VBoxContainer/Stats/Health"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="StatsAdult/VBoxContainer/Stats/Health"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_t8aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="NewEggButton" type="Button" parent="StatsAdult/VBoxContainer"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+text = "New Egg"
+
+[node name="DownButtonsAdult" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.025
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -512.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DownButtonsAdult"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 2
+
+[node name="PopUpContainer" type="HBoxContainer" parent="DownButtonsAdult/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_horizontal = 0
+alignment = 2
+
+[node name="PopUpContainer" type="VBoxContainer" parent="DownButtonsAdult/VBoxContainer/PopUpContainer"]
+layout_mode = 2
+
+[node name="PopUpButton1" type="TextureButton" parent="DownButtonsAdult/VBoxContainer/PopUpContainer/PopUpContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("2_ofd3o")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PopUpButton2" type="TextureButton" parent="DownButtonsAdult/VBoxContainer/PopUpContainer/PopUpContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("3_wkmp3")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="PopUpButton3" type="TextureButton" parent="DownButtonsAdult/VBoxContainer/PopUpContainer/PopUpContainer"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("4_rcte8")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Buttons" type="HBoxContainer" parent="DownButtonsAdult/VBoxContainer"]
+layout_mode = 2
+
+[node name="Feed" type="TextureButton" parent="DownButtonsAdult/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("3_pmleq")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Clean" type="TextureButton" parent="DownButtonsAdult/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("4_q2i1l")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Play" type="TextureButton" parent="DownButtonsAdult/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("5_32kd6")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StatsEgg" type="MarginContainer" parent="."]
+visible = false
+layout_mode = 2
+offset_left = 10.0
+offset_top = 10.0
+offset_right = 390.0
+offset_bottom = 159.0
+grow_horizontal = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="StatsEgg"]
+layout_mode = 2
+
+[node name="Stats" type="GridContainer" parent="StatsEgg/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+theme_override_constants/h_separation = 25
+theme_override_constants/v_separation = 10
+columns = 3
+
+[node name="Warmth" type="ProgressBar" parent="StatsEgg/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="StatsEgg/VBoxContainer/Stats/Warmth"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("6_njk5c")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="WarmthLabel" type="Label" parent="StatsEgg/VBoxContainer/Stats/Warmth"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Clean" type="ProgressBar" parent="StatsEgg/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="StatsEgg/VBoxContainer/Stats/Clean"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_q2i1l")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="CleanLabel" type="Label" parent="StatsEgg/VBoxContainer/Stats/Clean"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Affection" type="ProgressBar" parent="StatsEgg/VBoxContainer/Stats"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+min_value = 10.0
+step = 1.0
+value = 50.0
+fill_mode = 3
+show_percentage = false
+
+[node name="TextureRect" type="TextureRect" parent="StatsEgg/VBoxContainer/Stats/Affection"]
+self_modulate = Color(1, 1, 1, 0.478431)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -30.0
+offset_right = 50.0
+offset_bottom = 30.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("9_t8aol")
+expand_mode = 1
+stretch_mode = 5
+
+[node name="AffectionLabel" type="Label" parent="StatsEgg/VBoxContainer/Stats/Affection"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -13.0
+offset_right = 20.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+text = "50"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HatchProgressBar" type="MarginContainer" parent="StatsEgg/VBoxContainer"]
+layout_mode = 2
+theme_override_constants/margin_top = 10
+
+[node name="ProgressBar" type="ProgressBar" parent="StatsEgg/VBoxContainer/HatchProgressBar"]
+self_modulate = Color(0.345098, 0.709804, 0.329412, 1)
+custom_minimum_size = Vector2(0, 50)
+layout_mode = 2
+step = 1.0
+show_percentage = false
+
+[node name="HatchProgresBarLable" type="Label" parent="StatsEgg/VBoxContainer/HatchProgressBar"]
+layout_mode = 2
+text = "0% hatch in 10:30"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="DownButtonsEgg" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 1.0
+anchor_right = 1.025
+anchor_bottom = 1.0
+offset_left = 1.0
+offset_top = -512.0
+offset_right = -10.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_constants/margin_left = 15
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 15
+theme_override_constants/margin_bottom = 10
+
+[node name="VBoxContainer" type="VBoxContainer" parent="DownButtonsEgg"]
+layout_mode = 2
+theme_override_constants/separation = 5
+alignment = 2
+
+[node name="Buttons" type="HBoxContainer" parent="DownButtonsEgg/VBoxContainer"]
+layout_mode = 2
+
+[node name="Warm" type="TextureButton" parent="DownButtonsEgg/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("6_njk5c")
+texture_pressed = ExtResource("7_ny7i0")
+ignore_texture_size = true
+stretch_mode = 4
+
+[node name="Clean" type="TextureButton" parent="DownButtonsEgg/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("4_q2i1l")
+texture_pressed = ExtResource("8_dy60n")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="Talk" type="TextureButton" parent="DownButtonsEgg/VBoxContainer/Buttons"]
+custom_minimum_size = Vector2(120, 120)
+layout_mode = 2
+texture_normal = ExtResource("7_mhstp")
+texture_pressed = ExtResource("8_p17ct")
+ignore_texture_size = true
+stretch_mode = 5
+
+[node name="StatsFallingTimer" type="Timer" parent="."]
+wait_time = 60.0
+autostart = true
+
+[node name="HatchTimer" type="Timer" parent="."]
+autostart = true
+
+[connection signal="pressed" from="StatsAdult/VBoxContainer/NewEggButton" to="." method="_on_new_egg_button_pressed"]
+[connection signal="pressed" from="DownButtonsAdult/VBoxContainer/PopUpContainer/PopUpContainer/PopUpButton1" to="." method="_on_pop_up_button_1_pressed"]
+[connection signal="pressed" from="DownButtonsAdult/VBoxContainer/PopUpContainer/PopUpContainer/PopUpButton2" to="." method="_on_pop_up_button_2_pressed"]
+[connection signal="pressed" from="DownButtonsAdult/VBoxContainer/PopUpContainer/PopUpContainer/PopUpButton3" to="." method="_on_pop_up_button_3_pressed"]
+[connection signal="pressed" from="DownButtonsAdult/VBoxContainer/Buttons/Feed" to="." method="_on_feed_pressed"]
+[connection signal="pressed" from="DownButtonsAdult/VBoxContainer/Buttons/Clean" to="." method="_on_clean_pressed"]
+[connection signal="pressed" from="DownButtonsAdult/VBoxContainer/Buttons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="DownButtonsEgg/VBoxContainer/Buttons/Warm" to="." method="_on_warm_pressed"]
+[connection signal="pressed" from="DownButtonsEgg/VBoxContainer/Buttons/Clean" to="." method="_on_clean_pressed"]
+[connection signal="pressed" from="DownButtonsEgg/VBoxContainer/Buttons/Talk" to="." method="_on_talk_pressed"]
+[connection signal="timeout" from="StatsFallingTimer" to="." method="_on_stats_falling_timer_timeout"]
+[connection signal="timeout" from="HatchTimer" to="." method="_on_hatch_timer_timeout"]

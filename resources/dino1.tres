@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Dino" load_steps=4 format=3 uid="uid://dmnmixkhjxvd0"]
+
+[ext_resource type="Script" path="res://scripts/dino_resource.gd" id="1_ctjxh"]
+[ext_resource type="Texture2D" uid="uid://d4goowsx4fvxs" path="res://assets/steagosaur adult.png" id="1_mk8x7"]
+[ext_resource type="Texture2D" uid="uid://cxooordvlgram" path="res://assets/Egg.png" id="1_o3prs"]
+
+[resource]
+script = ExtResource("1_ctjxh")
+egg_texture = ExtResource("1_o3prs")
+adult_texture = ExtResource("1_mk8x7")
+dino_type = 0

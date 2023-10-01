@@ -1,0 +1,155 @@
+[gd_scene load_steps=23 format=3 uid="uid://cy70h3bfhgiyw"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_rlck6"]
+[ext_resource type="Texture2D" uid="uid://fsttpcxsjiwy" path="res://assets/Bg.png" id="2_hu8k6"]
+[ext_resource type="Texture2D" uid="uid://cxooordvlgram" path="res://assets/Egg.png" id="2_r2m1o"]
+[ext_resource type="PackedScene" uid="uid://dcujfskwlegxt" path="res://scenes/ui.tscn" id="3_mogrt"]
+[ext_resource type="Script" path="res://scripts/Dino.gd" id="4_bsjel"]
+[ext_resource type="Texture2D" uid="uid://bpjfrqxfou741" path="res://assets/EggHatching0000.png" id="5_8jpbx"]
+[ext_resource type="Script" path="res://scripts/dino_resource.gd" id="5_k3w84"]
+[ext_resource type="Texture2D" uid="uid://cvkg88yxmal06" path="res://assets/EggHatching0001.png" id="6_xi468"]
+[ext_resource type="Texture2D" uid="uid://mq7spxomrtlu" path="res://assets/light_texture.png" id="7_ud87g"]
+[ext_resource type="Texture2D" uid="uid://cwwl0n5gqmw5k" path="res://assets/EggHatching0003.png" id="8_eraep"]
+[ext_resource type="Texture2D" uid="uid://3gpls422klyd" path="res://assets/EggHatching000000000.png" id="8_y6065"]
+[ext_resource type="Texture2D" uid="uid://jmif30h2l5a8" path="res://assets/EggHatching0004.png" id="9_oryer"]
+[ext_resource type="Texture2D" uid="uid://dk0kmqre76qv0" path="res://assets/EggHatching0005.png" id="10_41ufk"]
+[ext_resource type="Texture2D" uid="uid://blqdtx36l0q2i" path="res://assets/EggHatching0006.png" id="11_x7jwc"]
+[ext_resource type="Texture2D" uid="uid://immups7oak4c" path="res://assets/EggHatching0007.png" id="12_wwtdc"]
+[ext_resource type="Texture2D" uid="uid://b841o5tqtu3c1" path="res://assets/EggHatching0008.png" id="13_b2qxu"]
+[ext_resource type="Texture2D" uid="uid://d2ruvwyh52ea3" path="res://assets/Ball.png" id="14_qpm57"]
+
+[sub_resource type="Resource" id="Resource_55xre"]
+script = ExtResource("5_k3w84")
+dino_type = 0
+
+[sub_resource type="Animation" id="Animation_6v2qg"]
+resource_name = "egg_hatching"
+length = 0.75
+loop_mode = 2
+step = 0.05
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.05, 0.1, 0.2, 0.3, 0.4, 0.5, 0.55, 0.6, 0.65, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("8_y6065"), ExtResource("9_oryer"), ExtResource("5_8jpbx"), ExtResource("6_xi468"), ExtResource("6_xi468"), ExtResource("8_eraep"), ExtResource("10_41ufk"), ExtResource("11_x7jwc"), ExtResource("12_wwtdc"), ExtResource("13_b2qxu"), ExtResource("14_qpm57")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.4, 0.65, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.9, 0.0]
+}
+tracks/2/type = "method"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [false],
+"method": &"stop"
+}]
+}
+tracks/3/type = "method"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath(".")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0.7),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [null],
+"method": &"make_input_local"
+}]
+}
+
+[sub_resource type="Animation" id="Animation_ie8ve"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_r2m1o")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("PointLight2D:energy")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_0h8xy"]
+resource_name = "dino_growing"
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bt6q2"]
+_data = {
+"RESET": SubResource("Animation_ie8ve"),
+"dino_growing": SubResource("Animation_0h8xy"),
+"egg_hatching": SubResource("Animation_6v2qg")
+}
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_rlck6")
+
+[node name="BackGround" type="TextureRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 400.0
+offset_bottom = 845.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_hu8k6")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+
+[node name="UI" parent="CanvasLayer" instance=ExtResource("3_mogrt")]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(200, 487)
+texture = ExtResource("2_r2m1o")
+script = ExtResource("4_bsjel")
+dino_resource = SubResource("Resource_55xre")
+
+[node name="PointLight2D" type="PointLight2D" parent="Sprite2D"]
+position = Vector2(4, 34)
+scale = Vector2(1.725, 1.725)
+color = Color(0.482353, 0.898039, 0.290196, 1)
+energy = 0.0
+texture = ExtResource("7_ud87g")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Sprite2D"]
+libraries = {
+"": SubResource("AnimationLibrary_bt6q2")
+}
+
+[connection signal="new_egg_needed" from="CanvasLayer/UI" to="." method="_on_ui_new_egg_needed"]

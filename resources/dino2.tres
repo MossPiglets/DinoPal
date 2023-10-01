@@ -1,0 +1,9 @@
+[gd_resource type="Resource" script_class="Dino" load_steps=3 format=3 uid="uid://b833xhhlfomaf"]
+
+[ext_resource type="Texture2D" uid="uid://cxooordvlgram" path="res://assets/Egg.png" id="1_o5cv1"]
+[ext_resource type="Script" path="res://scripts/dino_resource.gd" id="1_xdbrk"]
+
+[resource]
+script = ExtResource("1_xdbrk")
+egg_texture = ExtResource("1_o5cv1")
+dino_type = 1
